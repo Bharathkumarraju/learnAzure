@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sites_bharathwebappcli_name": {
+            "value": null
+        },
+        "serverfarms_TestAppSvcPlan_name": {
+            "value": null
+        },
+        "storageAccounts_bharathstorage_name": {
+            "value": null
+        }
+    }
+}
