@@ -34,3 +34,6 @@ dbkrajuhotmail.onmicrosoft.com
 
 
 Azure AD Single sign-on
+
+Azure AD Conditional Access
+
