@@ -16,3 +16,5 @@ Azure Service Trust Portal
 Azure Service Trust center 
 
 
+https://servicetrust.microsoft.com/
+
