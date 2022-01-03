@@ -20,3 +20,19 @@ Azure Service Trust Portal
 
 https://servicetrust.microsoft.com/
 
+
+https://privacy.microsoft.com/en-us/privacystatement
+
+
+
+Azure Compliance Resources:
+---------------------------------------------------->
+Trusted Cloud --> Security, Privacy, Compliance
+
+Microsoft Online Subscription Agreement(MOSA)
+Online Services Terms(OST)
+Online Service Data Protection Addendum(DPA)
+
+Service Level Agreement(SLA)
+
+Dedicated Hosts
