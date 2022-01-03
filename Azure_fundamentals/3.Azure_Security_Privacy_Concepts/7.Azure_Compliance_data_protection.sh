@@ -15,6 +15,8 @@ ISO 27001 --> security standard by ISO
 Azure Service Trust Portal 
 Azure Service Trust center 
 
+Azure Service Trust Portal
+------------------------------------------->
 
 https://servicetrust.microsoft.com/
 
