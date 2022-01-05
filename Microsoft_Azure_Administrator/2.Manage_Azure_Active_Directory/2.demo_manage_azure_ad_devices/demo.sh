@@ -26,6 +26,8 @@ VM User Login role
 
 Device Management for AAD-Joined Devices:
 ------------------------------------------------>
+MicroSoft Intune --> microsoft mobile device Management
+
 
 
 
