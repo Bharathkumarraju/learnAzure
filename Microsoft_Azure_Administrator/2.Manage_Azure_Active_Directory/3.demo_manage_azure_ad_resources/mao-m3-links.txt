@@ -1,0 +1,64 @@
+Module 3: Configure Azure AD Resources
+
+Exam AZ-104: Microsoft Azure Administrator - Learn | Microsoft Docs
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-104
+
+Exam AZ-104: Microsoft Azure Administrator - Learn | Microsoft Docs
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-104
+
+Microsoft Graph documentation | Microsoft Docs
+https://docs.microsoft.com/en-us/graph/
+
+Overview of Microsoft Graph - Microsoft Graph | Microsoft Docs
+https://docs.microsoft.com/en-us/graph/overview
+
+Bulk update Azure AD with user attributes from CSV - Microsoft Tech Community
+https://techcommunity.microsoft.com/t5/windows-powershell/bulk-update-azure-ad-with-user-attributes-from-csv/m-p/1374479
+
+Bulk Update with Company Name in Azure AD - Microsoft Tech Community
+https://techcommunity.microsoft.com/t5/azure-active-directory-identity/bulk-update-with-company-name-in-azure-ad/m-p/1561135
+
+Azure Active Directory - Bulk updating user profile attributes using PowerShell — EricPhan.net
+http://ericphan.net/blog/2017/9/26/azure-active-directory-bulk-updating-user-profile-attributes-using-powershell
+
+Pluralsight - PowerShell Getting Started
+https://www.pluralsight.com/courses/powershell-getting-started
+
+Manning | Learn Windows PowerShell in a Month of Lunches, Third Edition
+https://www.manning.com/books/learn-windows-powershell-in-a-month-of-lunches-third-edition
+
+Manning | Learn PowerShell in a Month of Lunches
+https://www.manning.com/books/learn-powershell-in-a-month-of-lunches?query=learn%20powershell%20month%20of%20lunches
+
+AzureAD Module | Microsoft Docs
+https://docs.microsoft.com/en-us/powershell/module/azuread/?view=azureadps-2.0
+
+Azure AD Connect sync: Understand and customize synchronization | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sync-whatis
+
+What is Azure AD Connect cloud provisioning. | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/cloud-provisioning/what-is-cloud-provisioning
+
+Enable Azure Active Directory self-service password reset | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-sspr
+
+What is Conditional Access in Azure Active Directory? | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview
+
+Azure AD Multi-Factor Authentication overview | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-mfa-howitworks
+
+Subscriptions, licenses, accounts, and tenants for Microsoft's cloud offerings - Microsoft 365 Enterprise | Microsoft Docs
+https://docs.microsoft.com/en-us/microsoft-365/enterprise/subscriptions-licenses-accounts-and-tenants-for-microsoft-cloud-offerings?view=o365-worldwide
+
+Locate & use apps on the My Apps portal - Azure AD | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/user-help/my-apps-portal-end-user-access
+
+Locate & use apps on the My Apps portal - Azure AD | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/user-help/my-apps-portal-end-user-access
+
+Add an existing Azure subscription to your tenant - Azure AD | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory
+
+Switch to another Azure Active Directory - Azure DevOps Services | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/change-azure-ad-connection?view=azure-devops

@@ -1,0 +1,86 @@
+Module 2: Administer Azure AD Devices
+
+Exam AZ-104: Microsoft Azure Administrator - Learn | Microsoft Docs
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-104
+
+Microsoft Azure Administrator (AZ-104) | Pluralsight
+https://www.pluralsight.com/paths/microsoft-azure-administrator-az-104
+
+Azure Active Directory integration with MDM - Windows Client Management | Microsoft Docs
+https://docs.microsoft.com/en-us/windows/client-management/mdm/azure-active-directory-integration-with-mdm
+
+What is Microsoft Intune - Azure | Microsoft Docs
+https://docs.microsoft.com/en-us/mem/intune/fundamentals/what-is-intune
+
+What is device identity in Azure Active Directory? | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/devices/overview
+
+Difference between Azure AD Registered, Azure AD joined, Hybrid Azure AD joined - Microsoft Q&A
+https://docs.microsoft.com/en-us/answers/questions/33891/difference-between-azure-ad-registered-azure-ad-jo.html
+
+What is an Azure AD joined device? | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/devices/concept-azure-ad-join
+
+Configure hybrid Azure Active Directory join for federated domains | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/devices/hybrid-azuread-join-federated-domains
+
+Plan hybrid Azure Active Directory join - Azure Active Directory | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/devices/hybrid-azuread-join-plan
+
+Sign in to Windows virtual machine in Azure using Azure Active Directory (Preview) | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/devices/howto-vm-sign-in-azure-ad-windows
+
+Azure AD authentication to Windows VMs in Azure now in public preview - Microsoft Tech Community
+https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azure-ad-authentication-to-windows-vms-in-azure-now-in-public/ba-p/827840
+
+What is the Microsoft Authenticator app? - Azure Active Directory | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/user-help/user-help-auth-app-overview
+
+Download and install the Microsoft Authenticator app - Azure AD | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/user-help/user-help-auth-app-download-install
+
+
+Using the Intune Company Portal website | Microsoft Docs
+https://docs.microsoft.com/en-us/mem/intune/user-help/using-the-intune-company-portal-website
+
+How to sign in to Company Portal app | Microsoft Docs
+https://docs.microsoft.com/en-us/mem/intune/user-help/sign-in-to-the-company-portal
+
+Managed identities for Azure resources | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview
+
+az vm extension | Microsoft Docs
+https://docs.microsoft.com/en-us/cli/azure/vm/extension?view=azure-cli-latest
+
+Net localgroup | Microsoft Docs
+https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc725622(v=ws.11)
+
+What is enterprise state roaming in Azure Active Directory? | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-overview
+
+Conditional Access - Require MFA for all users - Azure Active Directory | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/howto-conditional-access-policy-all-users-mfa
+
+Enable Azure AD Multi-Factor Authentication | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/authentication/tutorial-enable-azure-mfa
+
+What is Conditional Access in Azure Active Directory? | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview
+
+Microsoft Endpoint Manager overview - Azure | Microsoft Docs
+https://docs.microsoft.com/en-us/mem/endpoint-manager-overview
+
+Microsoft Intune documentation | Microsoft Docs
+https://docs.microsoft.com/en-us/mem/intune/
+
+Enroll devices with Windows Autopilot - Microsoft Intune | Microsoft Docs
+https://docs.microsoft.com/en-us/mem/autopilot/enrollment-autopilot
+
+Windows Autopilot User-Driven Mode | Microsoft Docs
+https://docs.microsoft.com/en-us/mem/autopilot/user-driven
+
+Use group policy analytics to import GPOs in Microsoft Intune - Azure | Microsoft Docs
+https://docs.microsoft.com/en-us/mem/intune/configuration/group-policy-analytics
+
+Microsoft 365 Certified: Enterprise Administrator Expert - Learn | Microsoft Docs
+https://docs.microsoft.com/en-us/learn/certifications/m365-enterprise-administrator

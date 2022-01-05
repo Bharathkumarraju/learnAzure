@@ -1,0 +1,13 @@
+az vm extension set \
+--publisher Microsoft.Azure.ActiveDirectory \
+--name AADLoginForWindows \
+--resource-group test \
+--vm-name win10a
+
+net localgroup "remote desktop users" /add "AzureAD\you@yourname.com"
+
+RDP File Changes
+enablecredsspsupport:i:0
+authentication level:i:2
+
+

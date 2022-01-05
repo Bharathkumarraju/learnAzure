@@ -1,0 +1,40 @@
+Module 1: Manage Azure AD Users and Groups
+
+Exam AZ-104: Microsoft Azure Administrator - Learn | Microsoft Docs
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-104
+
+Microsoft Azure Administrator (AZ-104) | Pluralsight
+https://www.pluralsight.com/paths/microsoft-azure-administrator-az-104
+
+Manage users and groups in Azure Active Directory - Learn | Microsoft Docs
+https://docs.microsoft.com/en-us/learn/modules/manage-users-and-groups-in-aad/
+
+Create a basic group and add members - Azure Active Directory | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal
+
+Manage app & resource access using groups - Azure AD | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-manage-groups
+
+What is B2B collaboration in Azure Active Directory? | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/external-identities/what-is-b2b
+
+External Identities documentation | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/external-identities/
+
+Bulk create users in the Azure Active Directory portal | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/users-bulk-add
+
+Bulk upload to add or create members of a group - Azure Active Directory | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-bulk-import-members
+
+Administrative units in Azure Active Directory | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/roles/administrative-units
+
+Azure AD role descriptions and permissions - Azure Active Directory | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference
+
+Add your custom domain - Azure Active Directory | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain
+
+Locate & use apps on the My Apps portal - Azure AD | Microsoft Docs
+https://docs.microsoft.com/en-us/azure/active-directory/user-help/my-apps-portal-end-user-access
