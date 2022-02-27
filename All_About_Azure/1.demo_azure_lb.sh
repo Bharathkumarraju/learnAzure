@@ -44,5 +44,9 @@ https://docs.microsoft.com/en-us/azure/application-gateway/overview
 
 Traffic Manager:
 --------------------------------->
-
 https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-load-balancing-azure
+
+
+Azure Front Door:
+------------------------------>
+
