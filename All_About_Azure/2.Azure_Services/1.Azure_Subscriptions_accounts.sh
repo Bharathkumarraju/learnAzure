@@ -1,6 +1,41 @@
-Azure subscription is a Logical Container -- Where as 
-Account is an identity.
+Azure subscription is a Logical Container.
+A single subscription can be attached to a lot of accounts.
 
+Account is an identity.
+Accounts also can be attached to lotof subscriptions
+
+
+bharaths-rg
+bharaths-rg
+
+bharathkumar@Azure:~$ az group create -l eastasia --resource-group CLITest-rg
+{
+  "id": "/subscriptions/1cb67706-f0c0-4a7c-9940-4d9779fbce91/resourceGroups/CLITest-rg",
+  "location": "eastasia",
+  "managedBy": null,
+  "name": "CLITest-rg",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/resourceGroups"
+}
+bharathkumar@Azure:~$
+
+
+bharathkumar@Azure:~$ az group create -l eastasia -n CLITest2-rg
+{
+  "id": "/subscriptions/1cb67706-f0c0-4a7c-9940-4d9779fbce91/resourceGroups/CLITest2-rg",
+  "location": "eastasia",
+  "managedBy": null,
+  "name": "CLITest2-rg",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/resourceGroups"
+}
+bharathkumar@Azure:~$ 
 
 
 MacBook-Pro:learnAzure bharathdasaraju$ az account list | jq
