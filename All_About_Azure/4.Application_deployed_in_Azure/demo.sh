@@ -7,5 +7,10 @@ Components:
 3. The inventory
 4. The Order Engine
 
+VSCODE Extensions:
+------------------------>
+1. C#
+2. Azure Account
+3. Azure App Service
 
 
