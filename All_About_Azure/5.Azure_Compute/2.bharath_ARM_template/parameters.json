@@ -74,7 +74,7 @@
             "value": "optimized-vm-rg"
         },
         "osDiskType": {
-            "value": "Premium_LRS"
+            "value": "standardSSD_LRS"
         },
         "osDiskDeleteOption": {
             "value": "Delete"
@@ -89,7 +89,7 @@
             "value": "bharath"
         },
         "adminPassword": {
-            "value": null
+            "value": "Hundanahara@123"
         },
         "patchMode": {
             "value": "AutomaticByOS"
