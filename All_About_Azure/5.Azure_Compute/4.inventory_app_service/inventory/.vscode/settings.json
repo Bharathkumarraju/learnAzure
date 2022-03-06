@@ -1,5 +1,5 @@
 {
     "appService.preDeployTask": "publish-release",
     "appService.deploySubpath": "bin\\Release\\netcoreapp3.1\\publish",
-    "appService.defaultWebAppToDeploy": "/subscriptions/5bbe28da-a2c1-4445-b606-a643c4ead39e/resourceGroups/azure-course-rg/providers/Microsoft.Web/sites/azcourseinventory2"
+    "appService.defaultWebAppToDeploy": "/subscriptions/1cb67706-f0c0-4a7c-9940-4d9779fbce91/resourceGroups/readit-app-rg/providers/Microsoft.Web/sites/bkr-inventory"
 }
