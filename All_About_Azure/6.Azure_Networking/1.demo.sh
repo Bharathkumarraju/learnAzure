@@ -41,3 +41,22 @@ CIDR:
 Resources in a subnet can talk to resources in other subnets in the same VNet.
 
 NSG is a gatekeeper for subnets
+
+Who can connect in and out of subnet.
+Its a mini-firewall.
+
+NSG:
+--------------------->
+Source:
+Source Port:
+Destination:
+Destonation Port:
+Protocol:
+
+NSG and VMs:
+------------------------->
+An NSG is automatically created and attached to every newly created VMs network interface.
+
+By default when we create a VM the NSG is getting created and the attached to the network interface.
+
+
