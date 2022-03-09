@@ -4,5 +4,7 @@
     "azureFunctions.projectLanguage": "C#",
     "azureFunctions.projectRuntime": "~3",
     "debug.internalConsoleOptions": "neverOpen",
-    "azureFunctions.preDeployTask": "publish (functions)"
+    "azureFunctions.preDeployTask": "publish (functions)",
+    "appService.defaultWebAppToDeploy": "/subscriptions/1cb67706-f0c0-4a7c-9940-4d9779fbce91/resourceGroups/readit-app-rg/providers/Microsoft.Web/sites/bkr-readit-inventory",
+    "appService.deploySubpath": "All_About_Azure/5.Azure_Compute/4.inventory_app_service/inventory/publish"
 }
