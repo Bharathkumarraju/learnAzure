@@ -1,0 +1,19 @@
+Section 13, Support (Supplemental), Introduction (Supplemental), Azure support options, https://docs.microsoft.com/learn/modules/create-an-azure-account/5-support-options?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 13, Support (Supplemental), Plans (Supplemental), Support scope and responsiveness, https://azure.microsoft.com/en-us/support/plans/response/
+
+Section 13, Support (Supplemental), Plans (Supplemental), Compare support plans, https://azure.microsoft.com/en-us/support/plans/
+
+Section 13, Support (Supplemental), Channels (Supplemental), Azure Forum, https://social.technet.microsoft.com/Forums/en-US/home?category=windowsazureplatform
+
+Section 13, Support (Supplemental), Channels (Supplemental), Azure Community, https://azure.microsoft.com/en-au/support/community/
+
+Section 13, Support (Supplemental), Channels (Supplemental), Azure, https://techcommunity.microsoft.com/t5/Azure/ct-p/Azure
+
+Section 13, Support (Supplemental), Azure on Q&A (Supplemental), Azure on Q&A, https://docs.microsoft.com/en-us/answers/products/azure?product=all
+
+Section 13, Support (Supplemental), Service Level Agreements (Supplemental), Service Level Agreements, https://azure.microsoft.com/en-us/support/legal/sla/
+
+Section 13, Support (Supplemental), Service Lifecycle (Supplemental), Service Lifecycle, https://azure.microsoft.com/en-au/updates/
+
+Section 13, Support (Supplemental), Demo: Using Preview Services (Supplemental), Demo - Using Preview Services, https://preview.portal.azure.com

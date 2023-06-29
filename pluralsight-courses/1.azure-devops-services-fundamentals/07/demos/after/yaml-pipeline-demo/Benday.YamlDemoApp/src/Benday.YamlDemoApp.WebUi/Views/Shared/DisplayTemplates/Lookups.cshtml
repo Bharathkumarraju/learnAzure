@@ -1,0 +1,51 @@
+@model IEnumerable<Benday.YamlDemoApp.Api.DomainModels.Lookup>
+
+@{
+ViewBag.Title = "Index";
+}
+
+    <table class="table table-striped table-hover">
+        <thead class="thead-light">
+        
+            <tr>
+                <th>
+                Display Order
+                </th>
+                <th>
+                Lookup Type
+                </th>
+                <th>
+                Lookup Key
+                </th>
+                <th>
+                Lookup Value
+                </th>
+            
+                <th>
+                </th>
+            </tr>
+        </thead>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+            @Html.DisplayFor(modelItem => item.DisplayOrder)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.LookupType)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.LookupKey)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.LookupValue)
+            </td>
+        
+            <td>
+            @Html.ActionLink("Edit", "Edit", "Lookup", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", "Lookup", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", "Lookup", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>

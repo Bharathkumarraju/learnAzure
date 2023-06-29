@@ -1,0 +1,11 @@
+Section 10, Security, Defense in Depth, Best Practices for Azure Security, https://www.microsoft.com/security/blog/2020/10/07/best-practices-for-defending-azure-virtual-machines/
+
+Section 10, Security, Securing Network Connectivity (Supplemental), Securing Network Connectivity, https://docs.microsoft.com/learn/modules/intro-to-security-in-azure/5-network-security?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 10, Security, Microsoft Defender for Cloud (formerly Azure Security Center), Protect against security threats by using Azure Security Center, https://docs.microsoft.com/en-us/learn/modules/protect-against-security-threats-azure/2-protect-threats-security-center
+
+Section 10, Security, Key Vault (Supplemental), Configure and manage secrets in Azure Key Vault, https://docs.microsoft.com/learn/modules/configure-and-manage-azure-key-vault?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 10, Security, Azure Information Protection (Supplemental), Protect your shared documents, https://docs.microsoft.com/learn/modules/intro-to-security-in-azure/6-azure-information-protection?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 10, Security, Microsoft Defender for Identity (formerly Azure Advanced Threat Protection) (Supplemental), Azure Advanced Threat Protection, https://docs.microsoft.com/learn/modules/intro-to-security-in-azure/7-advanced-threat-protection?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl

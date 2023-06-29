@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "16a03172-a272-4c36-976e-fdccd054dbcb": {
+      "ProjectGuid": "16a03172-a272-4c36-976e-fdccd054dbcb",
+      "DisplayName": "Benday.HelloWorld.WebUi",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

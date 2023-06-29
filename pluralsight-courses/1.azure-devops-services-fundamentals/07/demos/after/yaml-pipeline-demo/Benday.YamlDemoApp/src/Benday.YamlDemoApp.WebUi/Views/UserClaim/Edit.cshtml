@@ -1,0 +1,121 @@
+@model Benday.YamlDemoApp.WebUi.Models.UserClaimEditorViewModel
+
+@{
+ViewBag.Title = "Edit User claim";
+}
+
+    <h2>
+    User claim Editor
+    </h2>
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+
+    <div>
+        <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+    
+        <div class="form-group">
+        @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "control-label" })
+        @Html.DisplayFor(model => model.Id, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.HiddenFor(model => model.Id)
+        </div>
+        <div class="form-group">
+        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label" })
+            <input asp-for="@Model.Username" class="form-control" />
+            <span asp-validation-for="@Model.Username" class="text-danger">
+            </span>
+        </div>
+    
+        <div class="form-group">
+        @Html.LabelFor(model => model.ClaimName, htmlAttributes: new { @class = "control-label" })
+            <input asp-for="@Model.ClaimName" class="form-control" />
+            <span asp-validation-for="@Model.ClaimName" class="text-danger">
+            </span>
+        </div>
+    
+        <div class="form-group">
+        @Html.LabelFor(model => model.ClaimValue, htmlAttributes: new { @class = "control-label" })
+            <input asp-for="@Model.ClaimValue" class="form-control" />
+            <span asp-validation-for="@Model.ClaimValue" class="text-danger">
+            </span>
+        </div>
+    
+        <div class="form-group">
+        @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label" })
+            <input asp-for="@Model.UserId" class="form-control" />
+            <span asp-validation-for="@Model.UserId" class="text-danger">
+            </span>
+        </div>
+    
+        <div class="form-group">
+            <label asp-for="ClaimLogicType" class="control-label">
+            </label>
+            <select asp-for="ClaimLogicType" asp-items="Model.ClaimLogicTypes" class="form-control">
+            </select>
+            <span asp-validation-for="ClaimLogicType" class="text-danger">
+            </span>
+        </div>
+        <div class="form-group">
+        @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label" })
+            <input type="text" asp-for="@Model.StartDate" class="form-control" />
+            <span asp-validation-for="@Model.StartDate" class="text-danger">
+            </span>
+        </div>
+    
+        <div class="form-group">
+        @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label" })
+            <input type="text" asp-for="@Model.EndDate" class="form-control" />
+            <span asp-validation-for="@Model.EndDate" class="text-danger">
+            </span>
+        </div>
+    
+        <div class="form-group">
+            <label asp-for="Status" class="control-label">
+            </label>
+            <select asp-for="Status" asp-items="Model.Statuses" class="form-control">
+            </select>
+            <span asp-validation-for="Status" class="text-danger">
+            </span>
+        </div>
+        <div class="form-group">
+        @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label" })
+        @Html.DisplayFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.HiddenFor(model => model.CreatedBy)
+        </div>
+        <div class="form-group">
+        @Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label" })
+        @Html.DisplayFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.HiddenFor(model => model.CreatedDate)
+        </div>
+        <div class="form-group">
+        @Html.LabelFor(model => model.LastModifiedBy, htmlAttributes: new { @class = "control-label" })
+        @Html.DisplayFor(model => model.LastModifiedBy, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.HiddenFor(model => model.LastModifiedBy)
+        </div>
+        <div class="form-group">
+        @Html.LabelFor(model => model.LastModifiedDate, htmlAttributes: new { @class = "control-label" })
+        @Html.DisplayFor(model => model.LastModifiedDate, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.HiddenFor(model => model.LastModifiedDate)
+        </div>
+        <div class="form-group">
+        @Html.LabelFor(model => model.Timestamp, htmlAttributes: new { @class = "control-label" })
+        @Html.DisplayFor(model => model.Timestamp, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.HiddenFor(model => model.Timestamp)
+        </div>
+    
+    
+        <div class="form-group">
+            <div class="col-md-offset-2">
+                <input type="submit" value="Save" class="btn btn-default btn-primary mx-2" />
+                <input type="button" class="btn btn-secondary mx-2" value="Cancel" onclick="location.href='@Url.Action("Index")'" />
+            </div>
+        </div>
+    </div>
+}
+
+    <div>
+    @Html.ActionLink("Back to List", "Index")
+    </div>

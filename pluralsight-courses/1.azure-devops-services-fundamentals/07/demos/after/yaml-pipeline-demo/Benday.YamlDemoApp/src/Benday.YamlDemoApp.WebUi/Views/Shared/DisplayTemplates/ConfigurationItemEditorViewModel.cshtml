@@ -1,0 +1,29 @@
+@model Benday.YamlDemoApp.WebUi.Models.ConfigurationItemEditorViewModel
+    <tr id="@Html.Id("row")">
+    @Html.HiddenFor(model => model.IsMarkedForDelete)
+    @Html.HiddenFor(model => model.IsSelected)
+    @Html.HiddenFor(model => model.Id)
+        <td>
+        @Html.DisplayFor(model => model.Category)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.ConfigurationKey)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.Description)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.ConfigurationValue)
+        </td>
+    @Html.HiddenFor(model => model.Status)
+    @Html.HiddenFor(model => model.CreatedBy)
+    @Html.HiddenFor(model => model.CreatedDate)
+    @Html.HiddenFor(model => model.LastModifiedBy)
+    @Html.HiddenFor(model => model.LastModifiedDate)
+    @Html.HiddenFor(model => model.Timestamp)
+        <td>
+        @Html.ActionLink("Edit", "Edit", "ConfigurationItem", new { id=Model.Id }) |
+        @Html.ActionLink("Details", "Details", "ConfigurationItem", new { id=Model.Id }) |
+        @Html.ActionLink("Delete", "Delete", "ConfigurationItem", new { id=Model.Id })
+        </td>
+    </tr>

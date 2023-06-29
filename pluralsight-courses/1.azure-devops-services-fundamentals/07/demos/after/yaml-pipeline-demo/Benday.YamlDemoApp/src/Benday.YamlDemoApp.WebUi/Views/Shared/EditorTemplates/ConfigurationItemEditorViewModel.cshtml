@@ -1,0 +1,43 @@
+@model Benday.YamlDemoApp.WebUi.Models.ConfigurationItemEditorViewModel
+    <tr id="@Html.Id("row")">
+    @Html.HiddenFor(model => model.IsMarkedForDelete)
+    @Html.HiddenFor(model => model.IsSelected)
+    @Html.HiddenFor(model => model.Id)
+        <td>
+            <input asp-for="@Model.Category" class="form-control" />
+            <span asp-validation-for="@Model.Category" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.ConfigurationKey" class="form-control" />
+            <span asp-validation-for="@Model.ConfigurationKey" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.Description" class="form-control" />
+            <span asp-validation-for="@Model.Description" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.ConfigurationValue" class="form-control" />
+            <span asp-validation-for="@Model.ConfigurationValue" class="text-danger">
+            </span>
+        </td>
+    
+    @Html.HiddenFor(model => model.Status)
+    @Html.HiddenFor(model => model.CreatedBy)
+    @Html.HiddenFor(model => model.CreatedDate)
+    @Html.HiddenFor(model => model.LastModifiedBy)
+    @Html.HiddenFor(model => model.LastModifiedDate)
+    @Html.HiddenFor(model => model.Timestamp)
+        <td>
+            <button
+            type="button"
+            class="btn-danger"
+            onclick="markForDeleteOrUndelete('@Html.Id("deleteUndeleteButton")', '@Html.Id("row")', '@Html.IdFor(model => model.IsMarkedForDelete)')"
+            id="@Html.Id("deleteUndeleteButton")">delete</button>
+            </td>
+        </tr>

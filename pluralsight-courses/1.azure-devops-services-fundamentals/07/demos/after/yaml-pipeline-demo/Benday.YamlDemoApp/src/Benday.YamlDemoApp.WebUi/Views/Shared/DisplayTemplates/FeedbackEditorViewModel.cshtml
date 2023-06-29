@@ -1,0 +1,44 @@
+@model Benday.YamlDemoApp.WebUi.Models.FeedbackEditorViewModel
+    <tr id="@Html.Id("row")">
+    @Html.HiddenFor(model => model.IsMarkedForDelete)
+    @Html.HiddenFor(model => model.IsSelected)
+    @Html.HiddenFor(model => model.Id)
+        <td>
+        @Html.DisplayFor(model => model.FeedbackType)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.Sentiment)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.Subject)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.FeedbackText)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.Username)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.FirstName)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.LastName)
+        </td>
+    @Html.HiddenFor(model => model.Referer)
+    @Html.HiddenFor(model => model.UserAgent)
+    @Html.HiddenFor(model => model.IpAddress)
+        <td>
+        @Html.DisplayFor(model => model.IsContactRequest)
+        </td>
+    @Html.HiddenFor(model => model.Status)
+    @Html.HiddenFor(model => model.CreatedBy)
+    @Html.HiddenFor(model => model.CreatedDate)
+    @Html.HiddenFor(model => model.LastModifiedBy)
+    @Html.HiddenFor(model => model.LastModifiedDate)
+    @Html.HiddenFor(model => model.Timestamp)
+        <td>
+        @Html.ActionLink("Edit", "Edit", "Feedback", new { id=Model.Id }) |
+        @Html.ActionLink("Details", "Details", "Feedback", new { id=Model.Id }) |
+        @Html.ActionLink("Delete", "Delete", "Feedback", new { id=Model.Id })
+        </td>
+    </tr>

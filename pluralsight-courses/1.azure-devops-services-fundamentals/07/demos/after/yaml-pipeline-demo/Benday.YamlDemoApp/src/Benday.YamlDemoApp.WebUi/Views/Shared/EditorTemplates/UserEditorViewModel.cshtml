@@ -1,0 +1,56 @@
+@model Benday.YamlDemoApp.WebUi.Models.UserEditorViewModel
+    <tr id="@Html.Id("row")">
+    @Html.HiddenFor(model => model.IsMarkedForDelete)
+    @Html.HiddenFor(model => model.IsSelected)
+    @Html.HiddenFor(model => model.Id)
+        <td>
+            <input asp-for="@Model.Username" class="form-control" />
+            <span asp-validation-for="@Model.Username" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.Source" class="form-control" />
+            <span asp-validation-for="@Model.Source" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.EmailAddress" class="form-control" />
+            <span asp-validation-for="@Model.EmailAddress" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.FirstName" class="form-control" />
+            <span asp-validation-for="@Model.FirstName" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.LastName" class="form-control" />
+            <span asp-validation-for="@Model.LastName" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.PhoneNumber" class="form-control" />
+            <span asp-validation-for="@Model.PhoneNumber" class="text-danger">
+            </span>
+        </td>
+    
+    @Html.HiddenFor(model => model.Claims)
+    @Html.HiddenFor(model => model.Status)
+    @Html.HiddenFor(model => model.CreatedBy)
+    @Html.HiddenFor(model => model.CreatedDate)
+    @Html.HiddenFor(model => model.LastModifiedBy)
+    @Html.HiddenFor(model => model.LastModifiedDate)
+    @Html.HiddenFor(model => model.Timestamp)
+        <td>
+            <button
+            type="button"
+            class="btn-danger"
+            onclick="markForDeleteOrUndelete('@Html.Id("deleteUndeleteButton")', '@Html.Id("row")', '@Html.IdFor(model => model.IsMarkedForDelete)')"
+            id="@Html.Id("deleteUndeleteButton")">delete</button>
+            </td>
+        </tr>

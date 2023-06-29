@@ -1,0 +1,9 @@
+Section 5, Networking, Introduction, Azure Virtual Network fundamentals, https://docs.microsoft.com/en-us/learn/modules/azure-networking-fundamentals/azure-virtual-network-fundamentals?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 5, Networking, Virtual Network, Azure Virtual Network fundamentals, https://docs.microsoft.com/learn/modules/azure-networking-fundamentals/azure-virtual-network-fundamentals?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 5, Networking, VPN Gateway, Azure VPN Gateway fundamentals, https://docs.microsoft.com/learn/modules/azure-networking-fundamentals/azure-vpn-gateway-fundamentals?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 5, Networking, Content Delivery Network, Create a Content Delivery Network for your Website with Azure CDN and Blob Services, https://docs.microsoft.com/learn/modules/create-cdn-static-resources-blob-storage/?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 5, Networking, ExpressRoute, ExpressRoute FAQ, https://docs.microsoft.com/en-us/azure/expressroute/expressroute-faqs

@@ -1,0 +1,75 @@
+@model IEnumerable<Benday.YamlDemoApp.Api.DomainModels.LogEntry>
+
+@{
+ViewBag.Title = "Index";
+}
+
+    <table class="table table-striped table-hover">
+        <thead class="thead-light">
+        
+            <tr>
+                <th>
+                Id
+                </th>
+                <th>
+                category
+                </th>
+                <th>
+                log level
+                </th>
+                <th>
+                log text
+                </th>
+                <th>
+                exception text
+                </th>
+                <th>
+                event id
+                </th>
+                <th>
+                state
+                </th>
+                <th>
+                log date
+                </th>
+            
+                <th>
+                </th>
+            </tr>
+        </thead>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+            @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.LogLevel)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.LogText)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.ExceptionText)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.EventId)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.LogDate)
+            </td>
+        
+            <td>
+            @Html.ActionLink("Edit", "Edit", "LogEntry", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", "LogEntry", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", "LogEntry", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>

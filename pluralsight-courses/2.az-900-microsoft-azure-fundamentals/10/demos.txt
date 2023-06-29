@@ -1,0 +1,15 @@
+Section 11, Monitoring and Management, Governance, Define IT compliance with Azure Policy, https://docs.microsoft.com/learn/modules/intro-to-governance/2-azure-policy?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 11, Monitoring and Management, Governance, Microsoft Cloud Adoption Framework for Azure, https://docs.microsoft.com/azure/cloud-adoption-framework/?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 11, Monitoring and Management, Governance, Define standard resources with Azure Blueprints, https://docs.microsoft.com/learn/modules/intro-to-governance/5-azure-blueprints?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 11, Monitoring and Management, Compliance (Supplemental), Azure compliance documentation, https://docs.microsoft.com/en-us/azure/compliance/
+
+Section 11, Monitoring and Management, Compliance (Supplemental), Compliance, https://www.cnbc.com/2019/10/07/facebook-twitter-investigations-in-ireland-reach-conclusion.html
+
+Section 11, Monitoring and Management, Privacy (Supplemental), Privacy, https://privacy.microsoft.com/en-gb/privacystatement
+
+Section 11, Monitoring and Management, Trust (Supplemental), Explore your service compliance with Compliance Manager, https://docs.microsoft.com/learn/modules/intro-to-governance/6-azure-compliance?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 11, Monitoring and Management, Demo: Using Azure Monitor, Monitor Your Service Health, https://docs.microsoft.com/learn/modules/intro-to-governance/7-monitoring?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl

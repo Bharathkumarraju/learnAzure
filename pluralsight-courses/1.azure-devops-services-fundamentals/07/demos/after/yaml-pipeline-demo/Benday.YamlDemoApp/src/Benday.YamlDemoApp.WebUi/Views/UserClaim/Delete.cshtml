@@ -1,0 +1,128 @@
+@model Benday.YamlDemoApp.Api.DomainModels.UserClaim
+
+@{
+ViewBag.Title = "Details";
+}
+
+    <h2>
+    Delete
+    </h2>
+    <h3>
+    Are you sure you want to delete this?
+    </h3>
+    <div>
+        <h4>
+        User claim
+        </h4>
+    
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+            @Html.DisplayNameFor(model => model.Id)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.Username)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.Username)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.ClaimName)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.ClaimName)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.ClaimValue)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.ClaimValue)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.UserId)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.ClaimLogicType)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.ClaimLogicType)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.StartDate)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.EndDate)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.Status)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.Status)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedBy)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.LastModifiedBy)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedDate)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.LastModifiedDate)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.Timestamp)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.Timestamp)
+            </dd>
+        
+        </dl>
+    @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default btn-danger mx-2" />
+            <input type="button" class="btn btn-secondary mx-2" value="Cancel" onclick="location.href='@Url.Action("Index")'" />
+        </div>
+    }
+    </div>

@@ -1,0 +1,17 @@
+Section 14, Exam Preparation, Exam Overview, Official Microsoft Practice Test, https://us.mindhub.com/p/MU-AZ-900?utm_source=microsoft&utm_medium=certpage&utm_campaign=msofficialpractice
+
+Section 14, Exam Preparation, Demo: Signing Up for an Exam, AZ-900 Certification Link, https://docs.microsoft.com/learn/certifications/exams/az-900?WT.mc_id=ACloudGuru_Learn_multiple-Cert-wwl
+
+Section 14, Exam Preparation, Next Steps, Microsoft Learn Portal, https://docs.microsoft.com/en-us/learn/
+
+Section 14, Exam Preparation, Next Steps, Azure Based Hands on Labs, https://learn.acloud.guru/search?query=&cloudProviders%5B0%5D=Azure&page=1&learningTypes%5B0%5D=ACG_HANDS_ON_LAB
+
+Section 14, Exam Preparation, Next Steps, ACG Projects Series, https://acloud.guru/series/acg-projects?_ga=2.79095191.2066916149.1606858643-839143964.1601961956
+
+Section 14, Exam Preparation, Next Steps, Developer Labs, https://learn.acloud.guru/search?query=developer&page=1
+
+Section 14, Exam Preparation, Microsoft Learn Conclusion, Register for the AZ-900 Exam!, https://docs.microsoft.com/learn/certifications/exams/az-900?WT.mc_id=ACloudGuru_Learn_multiple-Cert-wwl
+
+Section 14, Exam Preparation, Keep Up to Date with Azure This Week, Azure This Week, https://bit.ly/2LzTBgv
+
+Section 14, Exam Preparation, Next Steps: AZ-104, AZ-104 Course, https://acloudguru.com/course/az-104-microsoft-azure-administrator-certification-prep

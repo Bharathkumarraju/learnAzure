@@ -1,0 +1,278 @@
+@model Benday.YamlDemoApp.WebUi.Models.ConfigurationItemSearchViewModel
+
+@{
+ViewBag.Title = "Configuration item Search";
+}
+
+    <h2>
+    Configuration item Search
+    </h2>
+
+@using (Html.BeginForm(method: FormMethod.Get))
+{
+@Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    
+        <div class="border">
+        
+        
+            <div class="form-group mt-2">
+            @Html.LabelFor(model => model.SimpleSearchValue, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                @Html.EditorFor(model => model.SimpleSearchValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SimpleSearchValue, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="detailedSearchHeader">
+                <h2 class="mb-0">
+                    <button class="btn btn-link"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseDetailedSearch"
+                    aria-expanded="true"
+                    aria-controls="collapseDetailedSearch">
+                    detailed search
+                    </button>
+                </h2>
+            </div>
+        
+            <div id="collapseDetailedSearch" class="collapse hide" aria-labelledby="detailedSearchHeader">
+                <div class="card-body">
+                    <div class="form-group">
+                    @Html.ValidationMessageFor(model => model.IsSimpleSearch, "", new { @class = "text-danger" })
+                    @Html.LabelFor(model => model.IsSimpleSearch, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.EditorFor(model => model.IsSimpleSearch, new { htmlAttributes = new { @class = "form-check-input" } })
+                    </div>
+                    <div class="form-group">
+                    @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                        @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    @Html.LabelFor(model => model.ConfigurationKey, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                        @Html.EditorFor(model => model.ConfigurationKey, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ConfigurationKey, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    @Html.LabelFor(model => model.ConfigurationValue, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                        @Html.EditorFor(model => model.ConfigurationValue, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ConfigurationValue, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                        @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                        @Html.EditorFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CreatedBy, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    @Html.LabelFor(model => model.LastModifiedBy, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                        @Html.EditorFor(model => model.LastModifiedBy, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LastModifiedBy, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                
+                
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="form-group mt-2">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default btn-primary mx-2" />
+            </div>
+        </div>
+    </div>
+@Html.HiddenFor(model => model.CurrentSortProperty)
+@Html.HiddenFor(model => model.CurrentSortDirection)
+    <table class="table table-striped table-hover">
+        <thead class="thead-light">
+            <tr>
+            @if(Model.CurrentSortProperty == "Category" &&
+            Model.CurrentSortDirection == Benday.Common.SearchConstants.SortDirectionAscending)
+            {
+                <th>
+                    <button type="submit" name="sortBy" value="Category" class="btn btn-link">
+                        <b>
+                        category &uarr;
+                        </b>
+                    </button>
+                </th>
+            }
+            else if(Model.CurrentSortProperty == "Category" &&
+            Model.CurrentSortDirection == Benday.Common.SearchConstants.SortDirectionDescending)
+            {
+                <th>
+                    <button type="submit" name="sortBy" value="Category" class="btn btn-link">
+                        <b>
+                        category &darr;
+                        </b>
+                    </button>
+                </th>
+            }
+            else
+            {
+                <th>
+                    <button type="submit" name="sortBy" value="Category" class="btn btn-link">
+                    category
+                    </button>
+                </th>
+            }
+            @if(Model.CurrentSortProperty == "ConfigurationKey" &&
+            Model.CurrentSortDirection == Benday.Common.SearchConstants.SortDirectionAscending)
+            {
+                <th>
+                    <button type="submit" name="sortBy" value="ConfigurationKey" class="btn btn-link">
+                        <b>
+                        configuration key &uarr;
+                        </b>
+                    </button>
+                </th>
+            }
+            else if(Model.CurrentSortProperty == "ConfigurationKey" &&
+            Model.CurrentSortDirection == Benday.Common.SearchConstants.SortDirectionDescending)
+            {
+                <th>
+                    <button type="submit" name="sortBy" value="ConfigurationKey" class="btn btn-link">
+                        <b>
+                        configuration key &darr;
+                        </b>
+                    </button>
+                </th>
+            }
+            else
+            {
+                <th>
+                    <button type="submit" name="sortBy" value="ConfigurationKey" class="btn btn-link">
+                    configuration key
+                    </button>
+                </th>
+            }
+            @if(Model.CurrentSortProperty == "Description" &&
+            Model.CurrentSortDirection == Benday.Common.SearchConstants.SortDirectionAscending)
+            {
+                <th>
+                    <button type="submit" name="sortBy" value="Description" class="btn btn-link">
+                        <b>
+                        description &uarr;
+                        </b>
+                    </button>
+                </th>
+            }
+            else if(Model.CurrentSortProperty == "Description" &&
+            Model.CurrentSortDirection == Benday.Common.SearchConstants.SortDirectionDescending)
+            {
+                <th>
+                    <button type="submit" name="sortBy" value="Description" class="btn btn-link">
+                        <b>
+                        description &darr;
+                        </b>
+                    </button>
+                </th>
+            }
+            else
+            {
+                <th>
+                    <button type="submit" name="sortBy" value="Description" class="btn btn-link">
+                    description
+                    </button>
+                </th>
+            }
+            @if(Model.CurrentSortProperty == "ConfigurationValue" &&
+            Model.CurrentSortDirection == Benday.Common.SearchConstants.SortDirectionAscending)
+            {
+                <th>
+                    <button type="submit" name="sortBy" value="ConfigurationValue" class="btn btn-link">
+                        <b>
+                        configuration value &uarr;
+                        </b>
+                    </button>
+                </th>
+            }
+            else if(Model.CurrentSortProperty == "ConfigurationValue" &&
+            Model.CurrentSortDirection == Benday.Common.SearchConstants.SortDirectionDescending)
+            {
+                <th>
+                    <button type="submit" name="sortBy" value="ConfigurationValue" class="btn btn-link">
+                        <b>
+                        configuration value &darr;
+                        </b>
+                    </button>
+                </th>
+            }
+            else
+            {
+                <th>
+                    <button type="submit" name="sortBy" value="ConfigurationValue" class="btn btn-link">
+                    configuration value
+                    </button>
+                </th>
+            }
+            
+                <th>
+                </th>
+            </tr>
+        </thead>
+    @if (Model.Results == null || Model.Results.PageValues == null || Model.Results.PageValues.Count == 0)
+    {
+        <tr>
+            <td colspan="100">
+            (no results)
+            </td>
+        </tr>
+    }
+    else
+    {
+    @foreach (var item in Model.Results.PageValues) {
+        <tr class="clickable-tr" onclick="handleRowClick(this)" data-href="@Url.Action("Details", new { id = item.Id })">
+            <td>
+            @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.ConfigurationKey)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.ConfigurationValue)
+            </td>
+        
+            <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    }
+    </table>
+
+@await Html.PartialAsync("_PageableResultsControl", Model.Results)
+}

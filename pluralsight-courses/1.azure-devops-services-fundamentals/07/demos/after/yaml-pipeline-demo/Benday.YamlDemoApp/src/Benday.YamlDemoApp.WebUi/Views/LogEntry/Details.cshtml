@@ -1,0 +1,80 @@
+@model Benday.YamlDemoApp.Api.DomainModels.LogEntry
+
+@{
+ViewBag.Title = "Details";
+}
+
+    <h2>
+    Log entries Details
+    </h2>
+
+    <div>
+        <h4>
+        log entries
+        </h4>
+    
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+            @Html.DisplayNameFor(model => model.Id)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.Category)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.Category)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.LogLevel)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.LogLevel)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.LogText)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.LogText)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.ExceptionText)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.ExceptionText)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.EventId)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.EventId)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.State)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.State)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.LogDate)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.LogDate)
+            </dd>
+        
+        </dl>
+    </div>
+    <p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+    </p>

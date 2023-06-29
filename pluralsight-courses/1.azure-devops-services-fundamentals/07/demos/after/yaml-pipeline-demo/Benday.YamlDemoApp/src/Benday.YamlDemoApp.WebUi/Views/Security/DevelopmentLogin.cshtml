@@ -1,0 +1,57 @@
+@model Benday.YamlDemoApp.WebUi.Models.DevelopmentLoginModel
+
+@{
+ViewData["Title"] = "DevelopmentLogin";
+}
+
+    <h2>
+    Development Login
+    </h2>
+
+    <h4>
+    This type of login is only for use on your development machine.  Don't use this in the cloud.  To turn it off, edit appsettings.json.
+    </h4>
+    <h2>
+    admin@test.com is an admin user.  Any other username is valid.
+    </h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="DevelopmentLogin">
+            @Html.HiddenFor(x => x.RedirectUrl)
+                <div asp-validation-summary="ModelOnly" class="text-danger">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Username" class="control-label">
+                    </label>
+                    <input asp-for="Username" class="form-control" value="admin@test.com" />
+                    <span asp-validation-for="Username" class="text-danger">
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label">
+                    </label>
+                    <input asp-for="Password" class="form-control" value="Password can be any value" />
+                    <span asp-validation-for="Password" class="text-danger">
+                    </span>
+                </div>
+                <div class="form-check">
+                    <input asp-for="KeepMeLoggedIn" class="form-check-input" />
+                    <label class="form-check-label">
+                    keep me logged in
+                    </label>
+                    <span asp-validation-for="KeepMeLoggedIn" class="text-danger">
+                    </span>
+                </div>
+            
+            
+                <div class="form-group mt-2">
+                    <input type="submit" value="Create" class="btn btn-default btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

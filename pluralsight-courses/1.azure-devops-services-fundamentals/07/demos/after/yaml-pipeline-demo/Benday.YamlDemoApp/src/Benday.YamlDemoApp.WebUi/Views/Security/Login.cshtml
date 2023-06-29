@@ -1,0 +1,45 @@
+@model Benday.YamlDemoApp.WebUi.Models.SecurityLoginModel
+
+@{
+ViewData["Title"] = "Login";
+}
+
+    <h2>
+    Login
+    </h2>
+
+    <h3>
+    You're not logged in.
+    </h3>
+    <hr />
+    <div class="row">
+        <div class="col-md-7">
+        
+        @foreach (var item in Model.LoginTypes)
+        {
+            <div class="row m-3">
+            @if (item.LogoFilename == null)
+            {
+                <a href="@item.Value">
+                @item.Key
+                </a>
+            }
+            else
+            {
+                <a href="@item.Value">
+                    <img src="~/images/login-buttons/@item.LogoFilename"
+                    width="215"
+                    alt="Login using @item.Key" />
+                    @item.Key
+                    </a>
+                }
+                </div>
+            }
+            
+            </div>
+        </div>
+    
+    
+    @section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

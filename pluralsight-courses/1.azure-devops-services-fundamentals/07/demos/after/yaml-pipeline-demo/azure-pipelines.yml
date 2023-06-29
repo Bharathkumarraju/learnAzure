@@ -1,0 +1,209 @@
+trigger:
+- main
+
+variables:
+  solutionDir: 'Benday.YamlDemoApp'
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+- stage: build
+  jobs:
+    - job: build
+      steps:
+      - script: pwd
+        displayName: 'what directory are we in?'
+
+      - script: ls -la
+        displayName: 'what files are in this folder?'
+
+      - script: docker --version
+        displayName: 'docker version'
+        workingDirectory: $(solutionDir)
+        
+      - script: dotnet build
+        displayName: 'dotnet build'
+        workingDirectory: '$(solutionDir)'
+
+      - task: DotNetCoreCLI@2
+        displayName: run unit tests
+        inputs:
+          command: 'test'
+          workingDirectory: '$(solutiondir)/test/Benday.YamlDemoApp.UnitTests'
+
+      - script: docker run --name sqlserver -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pa$$word' -p 1433:1433 -e 'MSSQL_PID=Standard' -d mcr.microsoft.com/mssql/server:2019-latest
+        displayName: 'start sql server container'
+
+      - script: ./deploy.sh -e build
+        displayName: run deploy script
+        workingDirectory: '$(solutionDir)'
+    
+      - task: DotNetCoreCLI@2
+        displayName: run integration tests
+        inputs:
+          command: 'test'
+          workingDirectory: '$(solutiondir)/test/Benday.YamlDemoApp.IntegrationTests'
+
+      - script: dotnet publish -o $(build.artifactStagingDirectory)/for-database-deploy
+        displayName: 'publish binaries for database deploy'
+        workingDirectory: '$(solutionDir)/src/Benday.YamlDemoApp.WebUi'
+
+      - task: DotNetCoreCLI@2
+        displayName: publish web application for azure
+        inputs:
+          command: publish
+          arguments: '-o $(build.artifactStagingDirectory)/for-azure'
+          workingDirectory: '$(solutiondir)/src/Benday.YamlDemoApp.WebUi'
+          zipAfterPublish: true
+          publishWebProjects: true
+
+      - script: ./create-deploy-scripts-folder.sh
+        displayName: 'create deploy scripts folder'
+
+      - script: cp -r ./deploy-scripts $(build.artifactStagingDirectory)/deploy-scripts
+        displayName: copy deploy scripts to artifacts
+
+      - task: PublishPipelineArtifact@1
+        inputs:
+          # targetPath: '$(Pipeline.Workspace)'
+          targetPath: '$(build.artifactStagingDirectory)'
+          artifact: 'drop'
+          publishLocation: 'pipeline'
+- stage: deploy_to_test
+  jobs:
+    - job: deployToAppService
+      displayName: 'deploy to azure app service -- test deployment slot'
+      steps:
+      - task: DownloadPipelineArtifact@2
+        inputs:
+          buildType: 'current'
+          artifactName: 'drop'
+          targetPath: '$(Pipeline.Workspace)/drop'
+      - script: pwd
+        displayName: what dir is this?
+        workingDirectory: '$(Pipeline.Workspace)'
+      - script: ls -lR
+        displayName: what's on disk?
+        workingDirectory: '$(Pipeline.Workspace)'
+      - task: setjsonconfigconnectionstring@1
+        displayName: 'update connection string in appsettings.json'
+        inputs:
+          keyname: default
+          filename: '$(Pipeline.Workspace)/drop/for-database-deploy/appsettings.json'
+          connectionstringvalue: $(connectionstring-test)
+
+      - task: deployefcoremigrations@1
+        displayName: 'deploy EF Core migrations'
+        inputs:
+          deployMigrationByName: false
+          dbContextClassName: YamlDemoAppDbContext
+          migrationsDll: '$(Pipeline.Workspace)/drop/for-database-deploy/Benday.YamlDemoApp.Api.dll'
+          migrationsNamespace: 'Benday.YamlDemoApp.Api'
+          startupDll: '$(Pipeline.Workspace)/drop/for-database-deploy/Benday.YamlDemoApp.WebUi.dll'
+          depsJsonFile: '$(Pipeline.Workspace)/drop/for-database-deploy/Benday.YamlDemoApp.WebUi.deps.json'
+          runtimeConfigFile: '$(Pipeline.Workspace)/drop/for-database-deploy/Benday.YamlDemoApp.WebUi.runtimeconfig.json'
+
+      - script: chmod -R a+x *.sh
+        displayName: make shell scripts executable for deploy scripts
+        workingDirectory: '$(Pipeline.Workspace)/drop/deploy-scripts'
+
+      - script: ./deploy.sh  -s '$(databaseServer)' -d '$(databaseName-test)' -u '$(databaseUsername)' -p '$(databasePassword)' -m 0 -z 0
+        displayName: run data deploy scripts
+        workingDirectory: '$(Pipeline.Workspace)/drop/deploy-scripts'
+
+      - task: AzureWebApp@1
+        inputs:
+          azureSubscription: 'Your Subscription Name (00000000-0000-0000-0000-000000000000)'
+          appType: 'webAppLinux'
+          appName: 'bendayyaml'
+          deployToSlotOrASE: true
+          resourceGroupName: 'rg-benday-yaml'
+          slotName: 'test'
+          package: '$(Pipeline.Workspace)/drop/for-azure/Benday.YamlDemoApp.WebUi.zip'
+          appSettings: '-MiscSettings__BuildVersionMessage "$(Build.DefinitionName) - $(Build.BuildNumber)" -ConnectionStrings__default "$(connectionstring-test)"'
+
+- stage: wait_for_approval
+  pool: server
+  jobs:
+  - job: waitForApproval
+    displayName: 'wait for approval'
+    timeoutInMinutes: 4320    # 3 days
+    steps:
+    - task: ManualValidation@0
+      timeoutInMinutes: 1440 # task times out in 1 day
+      inputs:
+        notifyUsers: benday@benday.com
+        instructions: 'Please validate the test env deployment'
+        onTimeout: 'reject'
+
+- stage: deploy_to_production
+  jobs:
+  - job: deployToAppService
+    displayName: 'deploy to azure app service production'
+    steps:
+    - task: DownloadPipelineArtifact@2
+      inputs:
+        buildType: 'current'
+        artifactName: 'drop'
+        targetPath: '$(Pipeline.Workspace)/drop'
+    - script: pwd
+      displayName: what dir is this?
+      workingDirectory: '$(Pipeline.Workspace)'
+    - script: ls -lR
+      displayName: what's on disk?
+      workingDirectory: '$(Pipeline.Workspace)'
+    - task: setjsonconfigconnectionstring@1
+      displayName: 'update connection string in appsettings.json'
+      inputs:
+        keyname: default
+        filename: '$(Pipeline.Workspace)/drop/for-database-deploy/appsettings.json'
+        connectionstringvalue: $(connectionstring-prod)
+
+    - task: deployefcoremigrations@1
+      displayName: 'deploy EF Core migrations'
+      inputs:
+        deployMigrationByName: false
+        dbContextClassName: YamlDemoAppDbContext
+        migrationsDll: '$(Pipeline.Workspace)/drop/for-database-deploy/Benday.YamlDemoApp.Api.dll'
+        migrationsNamespace: 'Benday.YamlDemoApp.Api'
+        startupDll: '$(Pipeline.Workspace)/drop/for-database-deploy/Benday.YamlDemoApp.WebUi.dll'
+        depsJsonFile: '$(Pipeline.Workspace)/drop/for-database-deploy/Benday.YamlDemoApp.WebUi.deps.json'
+        runtimeConfigFile: '$(Pipeline.Workspace)/drop/for-database-deploy/Benday.YamlDemoApp.WebUi.runtimeconfig.json'
+
+    - script: chmod -R a+x *.sh
+      displayName: make shell scripts executable for deploy scripts
+      workingDirectory: '$(Pipeline.Workspace)/drop/deploy-scripts'
+
+    - script: ./deploy.sh  -s '$(databaseServer)' -d '$(databaseName-prod)' -u '$(databaseUsername)' -p '$(databasePassword)' -m 0 -z 0
+      displayName: run data deploy scripts
+      workingDirectory: '$(Pipeline.Workspace)/drop/deploy-scripts'
+
+    # - task: AzureWebApp@1
+    #   inputs:
+    #     azureSubscription: 'Your Subscription Name (00000000-0000-0000-0000-000000000000)'
+    #     appType: 'webAppLinux'
+    #     appName: 'bendayyaml'
+    #     deployToSlotOrASE: true
+    #     resourceGroupName: 'rg-benday-yaml'
+    #     slotName: 'test'
+    #     package: '$(Pipeline.Workspace)/drop/for-azure/Benday.YamlDemoApp.WebUi.zip'
+    #     appSettings: '-MiscSettings__BuildVersionMessage "$(Build.DefinitionName) - $(Build.BuildNumber)" -ConnectionStrings__default "$(connectionstring-test)"'
+      
+    - task: AzureAppServiceManage@0
+      inputs:
+        azureSubscription: 'Your Subscription Name (00000000-0000-0000-0000-000000000000)'
+        Action: 'Swap Slots'
+        WebAppName: 'bendayyaml'
+        ResourceGroupName: 'rg-benday-yaml'
+        SourceSlot: 'test'
+
+    - task: AzureAppServiceSettings@1
+      inputs:
+        azureSubscription: 'Your Subscription Name (00000000-0000-0000-0000-000000000000)'
+        appName: 'bendayyaml'
+        resourceGroupName: 'rg-benday-yaml'
+        appSettings: |
+          [{ "name": "MiscSettings__BuildVersionMessage", "value": "$(Build.DefinitionName) - $(Build.BuildNumber)","slotSetting": false }, { "name": "ConnectionStrings__default", "value": "$(connectionstring-prod)", "slotSetting": false }]
+
+

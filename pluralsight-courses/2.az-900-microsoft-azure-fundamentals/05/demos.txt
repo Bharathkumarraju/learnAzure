@@ -1,0 +1,13 @@
+Section 6, Storage, Introduction, Benefits of Using Azure to Store Data, https://docs.microsoft.com/learn/modules/intro-to-data-in-azure/2-benefits-of-using-azure-to-store-data?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 6, Storage, Blob, Store application data with Azure Blob storage, https://docs.microsoft.com/learn/modules/store-app-data-with-azure-blob-storage/?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 6, Storage, Disk, Choose the right disk storage for your virtual machine workload, https://docs.microsoft.com/learn/modules/choose-the-right-disk-storage-for-vm-workload/?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 6, Storage, Demo: Creating a Storage Account, Azure Storage redundancy, https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
+
+Section 6, Storage, Demo: Creating a Storage Account, Create an Azure Storage account, https://docs.microsoft.com/learn/modules/create-azure-storage-account/?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 6, Storage, Premium Performance Options, Storage Account Overview, https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview#performance-tiers
+
+Section 6, Storage, Summary, What is Azure Queue Storage?, https://docs.microsoft.com/en-us/azure/storage/queues/storage-queues-introduction

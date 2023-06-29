@@ -1,0 +1,60 @@
+@model Benday.YamlDemoApp.WebUi.Models.LogEntryEditorViewModel
+    <tr id="@Html.Id("row")">
+    @Html.HiddenFor(model => model.IsMarkedForDelete)
+    @Html.HiddenFor(model => model.IsSelected)
+        <td>
+            <input asp-for="@Model.Id" class="form-control" />
+            <span asp-validation-for="@Model.Id" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.Category" class="form-control" />
+            <span asp-validation-for="@Model.Category" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.LogLevel" class="form-control" />
+            <span asp-validation-for="@Model.LogLevel" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.LogText" class="form-control" />
+            <span asp-validation-for="@Model.LogText" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.ExceptionText" class="form-control" />
+            <span asp-validation-for="@Model.ExceptionText" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.EventId" class="form-control" />
+            <span asp-validation-for="@Model.EventId" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.State" class="form-control" />
+            <span asp-validation-for="@Model.State" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input type="text" asp-for="@Model.LogDate" class="form-control" />
+            <span asp-validation-for="@Model.LogDate" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <button
+            type="button"
+            class="btn-danger"
+            onclick="markForDeleteOrUndelete('@Html.Id("deleteUndeleteButton")', '@Html.Id("row")', '@Html.IdFor(model => model.IsMarkedForDelete)')"
+            id="@Html.Id("deleteUndeleteButton")">delete</button>
+            </td>
+        </tr>

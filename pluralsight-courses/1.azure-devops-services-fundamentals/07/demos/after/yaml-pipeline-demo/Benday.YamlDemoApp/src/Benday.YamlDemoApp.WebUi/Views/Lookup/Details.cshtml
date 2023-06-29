@@ -1,0 +1,101 @@
+@model Benday.YamlDemoApp.Api.DomainModels.Lookup
+
+@{
+ViewBag.Title = "Details";
+}
+
+    <h2>
+    Lookup Details
+    </h2>
+
+    <div>
+        <h4>
+        lookup
+        </h4>
+    
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+            @Html.DisplayNameFor(model => model.Id)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.DisplayOrder)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.DisplayOrder)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.LookupType)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.LookupType)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.LookupKey)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.LookupKey)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.LookupValue)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.LookupValue)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.Status)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.Status)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedBy)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.LastModifiedBy)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedDate)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.LastModifiedDate)
+            </dd>
+            <dt>
+            @Html.DisplayNameFor(model => model.Timestamp)
+            </dt>
+        
+            <dd>
+            @Html.DisplayFor(model => model.Timestamp)
+            </dd>
+        
+        </dl>
+    </div>
+    <p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+    </p>

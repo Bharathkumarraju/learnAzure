@@ -1,0 +1,29 @@
+@inject Microsoft.Extensions.Configuration.IConfiguration _Configuration
+
+@functions {
+private string GetBuildVersionMessage()
+{
+var value = _Configuration["MiscSettings:BuildVersionMessage"];
+
+if (value == null)
+{
+return "(not set)";
+}
+else
+{
+return value;
+}
+}
+}
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">
+            Privacy
+            </a>
+        Version:
+            <i>
+            @(GetBuildVersionMessage())
+            </i>
+        </div>
+    </footer>

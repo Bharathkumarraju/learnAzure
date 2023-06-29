@@ -1,0 +1,206 @@
+@model SecuritySummaryViewModel
+
+@{
+ViewData["Title"] = "Index";
+}
+
+    <div class="container">
+        <div class="row top-buffer">
+            <div class="col-md-2">
+                <a href="/Security/Login?ReturnUrl=/SecuritySummary">
+                Login
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a href="/.auth/logout?post_logout_redirect_uri=/SecuritySummary">
+                Logout
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a href="/.auth/me" target="_blank">
+                Auth Me Info
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <h2>
+    HttpContext User Info
+    </h2>
+
+    <div class="container-fluid">
+    
+    @if (Context.User == null)
+    {
+        <div class="row">
+        Context.User is null
+        </div>
+    }
+    else
+    {
+        <div class="row">
+        Context.User is not null
+        </div>
+        <div class="row">
+        Context.User.Identities.Count: @Context.User.Identities.Count()
+        </div>
+        <div class="row">Context.User.Name: @Context.User.Identity.Name
+        </div>
+        <div class="row">Context.User.IsAuthenticated: @Context.User.Identity.IsAuthenticated
+        </div>
+        <div class="row">Context.User.AuthenticationScheme: @Context.User.Identity.AuthenticationType
+        </div>
+    }
+    
+    @if (User == null)
+    {
+        <div class="row">
+        User property is null
+        </div>
+    }
+    else
+    {
+        <div class="row">
+        User property is not null
+        </div>
+    }
+    
+    @if (User == Context.User)
+    {
+        <div class="row">
+        User == Context.User: true
+        </div>
+    }
+    else
+    {
+        <div class="row">
+        User == Context.User: false
+        </div>
+    }
+    </div>
+
+
+    <h2>
+    Claims Summary
+    </h2>
+
+    <div class="container-fluid">
+        <div class="row">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                        Issuer
+                        </th>
+                        <th>
+                        Type
+                        </th>
+                        <th>
+                        Value
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model.Claims)
+                {
+                    <tr>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Issuer)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Value)
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h2>
+    Header Summary
+    </h2>
+    <div class="container-fluid">
+        <div class="row">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                        Key
+                        </th>
+                        <th>
+                        Value
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model.Headers)
+                {
+                @if (item.Key.StartsWith("X-MS-") == true)
+                {
+                    <tr>
+                        <td>
+                            <b>
+                            @item.Key
+                            </b>
+                        </td>
+                        <td>
+                            <b>
+                            @item.Value
+                            </b>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td>
+                        @item.Key
+                        </td>
+                        <td>
+                        @item.Value
+                        </td>
+                    </tr>
+                }
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <h2>
+    Cookie Summary
+    </h2>
+    <div class="container-fluid">
+        <div class="row">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                        Key
+                        </th>
+                        <th>
+                        Value
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model.Cookies)
+                {
+                    <tr>
+                        <td>
+                        @item.Key
+                        </td>
+                        <td>
+                        @item.Value
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>

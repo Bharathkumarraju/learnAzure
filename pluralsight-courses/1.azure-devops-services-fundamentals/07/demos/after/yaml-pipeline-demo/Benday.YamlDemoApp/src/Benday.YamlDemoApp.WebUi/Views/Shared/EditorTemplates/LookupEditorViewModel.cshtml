@@ -1,0 +1,45 @@
+@model Benday.YamlDemoApp.WebUi.Models.LookupEditorViewModel
+    <tr id="@Html.Id("row")">
+    @Html.HiddenFor(model => model.IsMarkedForDelete)
+    @Html.HiddenFor(model => model.IsSelected)
+    @Html.HiddenFor(model => model.Id)
+        <td>
+            <input asp-for="@Model.DisplayOrder" class="form-control" />
+            <span asp-validation-for="@Model.DisplayOrder" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <select asp-for="LookupType" asp-items="Model.LookupTypes" class="form-control">
+            </select>
+            <span asp-validation-for="LookupType" class="text-danger">
+            </span>
+            <span asp-validation-for="@Model.LookupType">
+            </span>
+        </td>
+        <td>
+            <input asp-for="@Model.LookupKey" class="form-control" />
+            <span asp-validation-for="@Model.LookupKey" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.LookupValue" class="form-control" />
+            <span asp-validation-for="@Model.LookupValue" class="text-danger">
+            </span>
+        </td>
+    
+    @Html.HiddenFor(model => model.Status)
+    @Html.HiddenFor(model => model.CreatedBy)
+    @Html.HiddenFor(model => model.CreatedDate)
+    @Html.HiddenFor(model => model.LastModifiedBy)
+    @Html.HiddenFor(model => model.LastModifiedDate)
+    @Html.HiddenFor(model => model.Timestamp)
+        <td>
+            <button
+            type="button"
+            class="btn-danger"
+            onclick="markForDeleteOrUndelete('@Html.Id("deleteUndeleteButton")', '@Html.Id("row")', '@Html.IdFor(model => model.IsMarkedForDelete)')"
+            id="@Html.Id("deleteUndeleteButton")">delete</button>
+            </td>
+        </tr>

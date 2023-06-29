@@ -1,0 +1,123 @@
+trigger:
+  - main
+  
+variables:
+  - name: solutionDir
+    value: 'Benday.HelloWorld\Benday.HelloWorld.WebUi'
+  - name: isRunningUsingAzureDevOpsCloud
+    ${{ if startsWith(variables['System.CollectionUri'], 'https://dev.azure.com') }}:
+      value: true
+    ${{ if not(startsWith(variables['System.CollectionUri'], 'https://dev.azure.com')) }}:
+      value: false  
+
+pool: default
+  # vmImage: windows-latest
+
+stages:
+- stage: build
+  jobs:
+    - job: build
+      steps:
+      - script: echo 'This pipeline is running against Azure DevOps Services (cloud)'
+        displayName: 'Running against Azure DevOps cloud?'
+        condition: eq(variables['isRunningUsingAzureDevOpsCloud'], true)
+
+      - script: echo 'This pipeline is running against Azure DevOps Server (on-prem)'
+        displayName: 'Running against Azure DevOps on-prem?'
+        condition: eq(variables['isRunningUsingAzureDevOpsCloud'], false)
+
+      - script: set
+        displayName: 'get env vars'
+
+      - script: echo $(System.CollectionUri)
+        displayName: 'get collection uri'
+      
+      - script: dotnet build
+        displayName: 'dotnet build'
+        workingDirectory: '$(solutionDir)'
+
+      - task: DotNetCoreCLI@2
+        displayName: publish web application for azure
+        inputs:
+          command: publish
+          arguments: '-o $(build.artifactStagingDirectory)'
+          workingDirectory: '$(solutiondir)'
+          zipAfterPublish: true
+          publishWebProjects: true
+
+      - task: PublishPipelineArtifact@1
+        condition: eq(variables['isRunningUsingAzureDevOpsCloud'], true)
+        inputs:
+          targetPath: '$(build.artifactStagingDirectory)'
+          artifact: 'drop'
+          publishLocation: 'pipeline'
+          
+      - task: PublishBuildArtifacts@1
+        condition: eq(variables['isRunningUsingAzureDevOpsCloud'], false)
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'drop'
+          publishLocation: 'Container'
+- stage: deploy_to_test
+  jobs:
+    - job: deployToTest
+      displayName: 'deploy to test'
+      steps:
+      - task: DownloadPipelineArtifact@2
+        condition: eq(variables['isRunningUsingAzureDevOpsCloud'], true)
+        inputs:
+          buildType: 'current'
+          artifactName: 'drop'
+          targetPath: '$(System.ArtifactsDirectory)\drop'
+      
+      - task: DownloadBuildArtifacts@0
+        condition: eq(variables['isRunningUsingAzureDevOpsCloud'], false)
+        inputs:
+          buildType: 'current'
+          downloadType: 'single'
+          artifactName: 'drop'
+          downloadPath: '$(System.ArtifactsDirectory)'
+
+      - script: if not exist c:\deploy\test-env mkdir c:\deploy\test-env
+
+      - script: copy $(System.ArtifactsDirectory)\drop c:\deploy\test-env
+        displayName: "copy to test deployment dir"
+        
+- stage: wait_for_approval
+  pool: server
+  jobs:
+  - job: waitForApproval
+    displayName: 'wait for approval'
+    timeoutInMinutes: 4320    # 3 days
+    steps:
+    - task: ManualValidation@0
+      timeoutInMinutes: 1440 # task times out in 1 day
+      inputs:
+        notifyUsers: benday@benday.com
+        instructions: 'Please validate the test env deployment'
+        onTimeout: 'reject'
+
+- stage: deploy_to_prod
+  jobs:
+  - job: deployToProd
+    displayName: 'deploy to prod'
+    steps:
+    - task: DownloadPipelineArtifact@2
+      condition: eq(variables['isRunningUsingAzureDevOpsCloud'], true)
+      inputs:
+        buildType: 'current'
+        artifactName: 'drop'
+        targetPath: '$(System.ArtifactsDirectory)\drop'
+    
+    - task: DownloadBuildArtifacts@0
+      condition: eq(variables['isRunningUsingAzureDevOpsCloud'], false)
+      inputs:
+        buildType: 'current'
+        downloadType: 'single'
+        artifactName: 'drop'
+        downloadPath: '$(System.ArtifactsDirectory)'
+    
+    - script: if not exist c:\deploy\prod-env mkdir c:\deploy\prod-env
+
+    - script: copy $(System.ArtifactsDirectory)\drop c:\deploy\prod-env
+      displayName: "copy to production deployment dir"

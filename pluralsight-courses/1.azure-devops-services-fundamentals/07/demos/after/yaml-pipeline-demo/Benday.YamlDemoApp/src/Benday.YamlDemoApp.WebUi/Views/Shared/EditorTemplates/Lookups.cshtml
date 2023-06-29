@@ -1,0 +1,43 @@
+@model ViewModelRowCollection<Benday.YamlDemoApp.WebUi.Models.LookupEditorViewModel>
+@{
+ViewBag.Title = "Index";
+}
+
+    <table class="table table-striped table-hover border" id="@Html.Id("table")">
+        <thead class="thead-light">
+        
+            <tr>
+                <th>
+                Display Order
+                </th>
+                <th>
+                Lookup Type
+                </th>
+                <th>
+                Lookup Key
+                </th>
+                <th>
+                Lookup Value
+                </th>
+            
+                <th>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        @Html.EditorForTemplateRowTable(this.HtmlEncoder, model => model)
+        </tbody>
+        <tfoot class="bg-light">
+            <tr>
+                <th colspan="100">
+                
+                    <button class="btn btn-primary" type="button"
+                    onclick="addTableRow('@Html.Id("table")', '@Html.Id("rowCount")', '@Html.Id("templateRow")')">
+                    add row
+                    </button>
+                
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+@Html.Hidden("rowCount", Model.Count)

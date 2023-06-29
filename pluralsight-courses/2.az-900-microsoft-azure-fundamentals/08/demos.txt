@@ -1,0 +1,19 @@
+Section 9, Azure Solutions (Supplemental), Internet of Things (Supplemental), Introduction to Azure IoT, https://docs.microsoft.com/learn/paths/introduction-to-azure-iot/?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 9, Azure Solutions (Supplemental), Internet of Things (Supplemental), Introduction to Azure IoT Hub, https://docs.microsoft.com/learn/modules/introduction-to-iot-hub/?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 9, Azure Solutions (Supplemental), Big Data (Supplemental), Introduction to Azure Data Lake storage, https://docs.microsoft.com/learn/modules/introduction-to-azure-data-lake-storage/?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 9, Azure Solutions (Supplemental), Big Data (Supplemental), Implement a Data Warehouse with Azure Synapse Analytics, https://docs.microsoft.com/learn/paths/implement-sql-data-warehouse/?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 9, Azure Solutions (Supplemental), Machine Learning (Supplemental), Deep learning vs. machine learning in Azure Machine Learning, https://docs.microsoft.com/en-us/azure/machine-learning/concept-deep-learning-vs-machine-learning
+
+Section 9, Azure Solutions (Supplemental), Machine Learning (Supplemental), Predict rocket launch delays with machine learning, https://docs.microsoft.com/learn/paths/machine-learning-predict-launch-delay-nasa/?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 9, Azure Solutions (Supplemental), Serverless (Supplemental), Explore Serverless computing in Azure, https://docs.microsoft.com/en-us/learn/modules/serverless-fundamentals/
+
+Section 9, Azure Solutions (Supplemental), DevOps (Supplemental), Get started with Azure DevOps, https://docs.microsoft.com/learn/modules/get-started-with-devops/?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 9, Azure Solutions (Supplemental), Demo: Using Azure AI (Supplemental), Hands-on-lab - Using Azure AI, https://aidemos.microsoft.com/
+
+Section 9, Azure Solutions (Supplemental), Demo: Using Azure AI (Supplemental), Using Azure AI Demo, https://aidemos.microsoft.com/luis/demo

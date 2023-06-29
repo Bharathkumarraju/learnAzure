@@ -1,0 +1,11 @@
+Section 2, Cloud Concepts, Introduction, What is cloud computing?, https://docs.microsoft.com/learn/modules/principles-cloud-computing/2-what-is-cloud-computing?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 2, Cloud Concepts, The Language of Cloud Computing, Benefits of cloud computing, https://azure.microsoft.com/en-us/overview/what-is-cloud-computing/#benefits
+
+Section 2, Cloud Concepts, The Economy of Cloud Computing, Examples of fiscal outcomes, https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/business-outcomes/fiscal-outcomes
+
+Section 2, Cloud Concepts, Cloud Service Models, What are the different types of cloud computing services?, https://azure.microsoft.com/en-us/overview/types-of-cloud-computing/
+
+Section 2, Cloud Concepts, Cloud Architect Models, Cloud deployment models, https://docs.microsoft.com/learn/modules/principles-cloud-computing/4-cloud-deployment-models?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 2, Cloud Concepts, Cloud Architect Models, Align requirements with cloud types and service models in Azure, https://docs.microsoft.com/en-us/learn/modules/align-requirements-in-azure/

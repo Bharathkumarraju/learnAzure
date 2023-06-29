@@ -1,0 +1,58 @@
+@model Benday.YamlDemoApp.WebUi.Models.UserClaimEditorViewModel
+    <tr id="@Html.Id("row")">
+    @Html.HiddenFor(model => model.IsMarkedForDelete)
+    @Html.HiddenFor(model => model.IsSelected)
+    @Html.HiddenFor(model => model.Id)
+        <td>
+            <input asp-for="@Model.Username" class="form-control" />
+            <span asp-validation-for="@Model.Username" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.ClaimName" class="form-control" />
+            <span asp-validation-for="@Model.ClaimName" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.ClaimValue" class="form-control" />
+            <span asp-validation-for="@Model.ClaimValue" class="text-danger">
+            </span>
+        </td>
+    
+    @Html.HiddenFor(model => model.UserId)
+        <td>
+            <select asp-for="ClaimLogicType" asp-items="Model.ClaimLogicTypes" class="form-control">
+            </select>
+            <span asp-validation-for="ClaimLogicType" class="text-danger">
+            </span>
+            <span asp-validation-for="@Model.ClaimLogicType">
+            </span>
+        </td>
+        <td>
+            <input type="text" asp-for="@Model.StartDate" class="form-control" />
+            <span asp-validation-for="@Model.StartDate" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input type="text" asp-for="@Model.EndDate" class="form-control" />
+            <span asp-validation-for="@Model.EndDate" class="text-danger">
+            </span>
+        </td>
+    
+    @Html.HiddenFor(model => model.Status)
+    @Html.HiddenFor(model => model.CreatedBy)
+    @Html.HiddenFor(model => model.CreatedDate)
+    @Html.HiddenFor(model => model.LastModifiedBy)
+    @Html.HiddenFor(model => model.LastModifiedDate)
+    @Html.HiddenFor(model => model.Timestamp)
+        <td>
+            <button
+            type="button"
+            class="btn-danger"
+            onclick="markForDeleteOrUndelete('@Html.Id("deleteUndeleteButton")', '@Html.Id("row")', '@Html.IdFor(model => model.IsMarkedForDelete)')"
+            id="@Html.Id("deleteUndeleteButton")">delete</button>
+            </td>
+        </tr>

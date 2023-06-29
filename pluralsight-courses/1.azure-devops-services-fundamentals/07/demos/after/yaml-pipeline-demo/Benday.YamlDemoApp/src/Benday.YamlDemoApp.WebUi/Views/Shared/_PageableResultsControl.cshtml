@@ -1,0 +1,21 @@
+@model IPageableResults
+
+@Html.HiddenFor(model => model.CurrentPage)
+    <div class="row justify-content-between">
+        <div >
+        Row Count: @Model.TotalCount
+        </div>
+        <div >
+        @for (var index = 1; index < Model.PageCount; index++)
+        {
+        @if (Model.CurrentPage == index)
+        {
+            <input type="submit" name="pageNumber" value="@index" class="btn btn-secondary" />
+        }
+        else
+        {
+            <input type="submit" name="pageNumber" value="@index" class="btn btn-light" />
+        }
+        }
+        </div>
+    </div>

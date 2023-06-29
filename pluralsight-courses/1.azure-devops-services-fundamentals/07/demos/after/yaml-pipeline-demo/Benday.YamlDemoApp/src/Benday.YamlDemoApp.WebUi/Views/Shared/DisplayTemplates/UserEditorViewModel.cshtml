@@ -1,0 +1,36 @@
+@model Benday.YamlDemoApp.WebUi.Models.UserEditorViewModel
+    <tr id="@Html.Id("row")">
+    @Html.HiddenFor(model => model.IsMarkedForDelete)
+    @Html.HiddenFor(model => model.IsSelected)
+    @Html.HiddenFor(model => model.Id)
+        <td>
+        @Html.DisplayFor(model => model.Username)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.Source)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.EmailAddress)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.FirstName)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.LastName)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.PhoneNumber)
+        </td>
+    @Html.HiddenFor(model => model.Claims)
+    @Html.HiddenFor(model => model.Status)
+    @Html.HiddenFor(model => model.CreatedBy)
+    @Html.HiddenFor(model => model.CreatedDate)
+    @Html.HiddenFor(model => model.LastModifiedBy)
+    @Html.HiddenFor(model => model.LastModifiedDate)
+    @Html.HiddenFor(model => model.Timestamp)
+        <td>
+        @Html.ActionLink("Edit", "Edit", "User", new { id=Model.Id }) |
+        @Html.ActionLink("Details", "Details", "User", new { id=Model.Id }) |
+        @Html.ActionLink("Delete", "Delete", "User", new { id=Model.Id })
+        </td>
+    </tr>

@@ -1,0 +1,9 @@
+Section 4, Compute, Introduction, Essential Azure Compute Concepts, https://docs.microsoft.com/learn/modules/intro-to-azure-compute/2-essential-azure-compute-concepts?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 4, Compute, Virtual Machines, Explore Azure Virtual Machines, https://docs.microsoft.com/learn/modules/intro-to-azure-compute/3-virtual-machines?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 4, Compute, App Services, Explore Azure App Service, https://docs.microsoft.com/learn/modules/intro-to-azure-compute/5-appservice?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 4, Compute, Azure Container Instances, Explore Containers in Azure, https://docs.microsoft.com/learn/modules/intro-to-azure-compute/4-containers?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 4, Compute, Functions, Explore Serverless computing in Azure, https://docs.microsoft.com/learn/modules/intro-to-azure-compute/6-serverless-computing?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl

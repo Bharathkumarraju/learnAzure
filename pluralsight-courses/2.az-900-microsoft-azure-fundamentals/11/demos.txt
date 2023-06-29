@@ -1,0 +1,13 @@
+Section 12, Pricing, Subscriptions, Understand Azure billing, https://docs.microsoft.com/learn/modules/create-an-azure-account/4-multiple-subscriptions?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 12, Pricing, Subscriptions, Subscriptions, https://azure.microsoft.com/en-au/support/legal/offer-details/
+
+Section 12, Pricing, Cost Management, Azure Fundamentals part 6: Describe Azure cost management and service level agreements, https://docs.microsoft.com/learn/paths/az-900-describe-azure-cost-management-service-level-agreements/?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 12, Pricing, Cost Management, Free Account FAQ, https://azure.microsoft.com/en-au/free/free-account-faq/
+
+Section 12, Pricing, Pricing Factor, Total Cost Calculator, https://azure.microsoft.com/en-au/pricing/tco/calculator/
+
+Section 12, Pricing, Pricing Factor, Pricing Calculator, https://azure.microsoft.com/en-au/pricing/calculator/
+
+Section 12, Pricing, Demo: Using the Pricing Calculator, Pricing calculator, https://azure.microsoft.com/en-au/pricing/calculator/

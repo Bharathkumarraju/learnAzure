@@ -1,0 +1,1 @@
+sqlcmd -i .\update-lookup-values.sql -d benday-yaml-demo-app

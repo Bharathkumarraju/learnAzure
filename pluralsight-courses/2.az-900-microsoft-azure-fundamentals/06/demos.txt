@@ -1,0 +1,15 @@
+Section 7, Database (Supplemental), Introduction (Supplemental), How Azure data storage can meet your business storage needs, https://docs.microsoft.com/learn/modules/intro-to-data-in-azure/3-how-azure-storage-meets-your-business-storage-needs?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 7, Database (Supplemental), Azure SQL (Supplemental), Introduction to Azure SQL, https://docs.microsoft.com/learn/modules/azure-sql-intro/?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 7, Database (Supplemental), Azure Database for MySQL (Supplemental), Deploy MySQL and MariaDB to Azure, https://docs.microsoft.com/learn/modules/deploy-mariadb-mysql-postgresql-azure/4-deploy-mysql-mariadb-azure?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 7, Database (Supplemental), Azure Database for PostgreSQL (Supplemental), Explain how to deploy PostgreSQL to Azure, https://docs.microsoft.com/learn/modules/deploy-mariadb-mysql-postgresql-azure/3-explain-how-deploy-postgresql-azure?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 7, Database (Supplemental), Database Migration Services (Supplemental), Status of migration scenarios supported by Azure Database Migration Service, https://docs.microsoft.com/en-us/azure/dms/resource-scenario-status
+
+Section 7, Database (Supplemental), Database Migration Services (Supplemental), Online (continuous sync) migration support, https://docs.microsoft.com/en-us/azure/dms/resource-scenario-status#online-continuous-sync-migration-support
+
+Section 7, Database (Supplemental), Database Migration Services (Supplemental), Exercise - Migrate a database with downtime by using Azure Database Migration Service, https://docs.microsoft.com/learn/modules/migrate-sql-server-relational-data/7-exercise-migrate-database-service?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 7, Database (Supplemental), Database Migration Services (Supplemental), Database Migration, https://datamigration.microsoft.com/

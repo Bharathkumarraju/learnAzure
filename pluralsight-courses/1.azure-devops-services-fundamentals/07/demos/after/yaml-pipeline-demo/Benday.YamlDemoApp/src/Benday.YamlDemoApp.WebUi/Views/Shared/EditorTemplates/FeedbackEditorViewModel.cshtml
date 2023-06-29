@@ -1,0 +1,73 @@
+@model Benday.YamlDemoApp.WebUi.Models.FeedbackEditorViewModel
+    <tr id="@Html.Id("row")">
+    @Html.HiddenFor(model => model.IsMarkedForDelete)
+    @Html.HiddenFor(model => model.IsSelected)
+    @Html.HiddenFor(model => model.Id)
+        <td>
+            <select asp-for="FeedbackType" asp-items="Model.FeedbackTypes" class="form-control">
+            </select>
+            <span asp-validation-for="FeedbackType" class="text-danger">
+            </span>
+            <span asp-validation-for="@Model.FeedbackType">
+            </span>
+        </td>
+        <td>
+            <select asp-for="Sentiment" asp-items="Model.Sentiments" class="form-control">
+            </select>
+            <span asp-validation-for="Sentiment" class="text-danger">
+            </span>
+            <span asp-validation-for="@Model.Sentiment">
+            </span>
+        </td>
+        <td>
+            <input asp-for="@Model.Subject" class="form-control" />
+            <span asp-validation-for="@Model.Subject" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.FeedbackText" class="form-control" />
+            <span asp-validation-for="@Model.FeedbackText" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.Username" class="form-control" />
+            <span asp-validation-for="@Model.Username" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.FirstName" class="form-control" />
+            <span asp-validation-for="@Model.FirstName" class="text-danger">
+            </span>
+        </td>
+    
+        <td>
+            <input asp-for="@Model.LastName" class="form-control" />
+            <span asp-validation-for="@Model.LastName" class="text-danger">
+            </span>
+        </td>
+    
+    @Html.HiddenFor(model => model.Referer)
+    @Html.HiddenFor(model => model.UserAgent)
+    @Html.HiddenFor(model => model.IpAddress)
+        <td>
+            <input asp-for="@Model.IsContactRequest" class="form-check" />
+            <span asp-validation-for="@Model.IsContactRequest" class="text-danger">
+            </span>
+        </td>
+    @Html.HiddenFor(model => model.Status)
+    @Html.HiddenFor(model => model.CreatedBy)
+    @Html.HiddenFor(model => model.CreatedDate)
+    @Html.HiddenFor(model => model.LastModifiedBy)
+    @Html.HiddenFor(model => model.LastModifiedDate)
+    @Html.HiddenFor(model => model.Timestamp)
+        <td>
+            <button
+            type="button"
+            class="btn-danger"
+            onclick="markForDeleteOrUndelete('@Html.Id("deleteUndeleteButton")', '@Html.Id("row")', '@Html.IdFor(model => model.IsMarkedForDelete)')"
+            id="@Html.Id("deleteUndeleteButton")">delete</button>
+            </td>
+        </tr>

@@ -1,0 +1,3 @@
+Section 3, Azure Architecture, Regions and Availability Zones, Azure Datacenter, https://www.youtube.com/watch?v=D8hMu4jJAwo
+
+Section 3, Azure Architecture, Resource Groups and Azure Resource Manager, Principles of resource groups, https://docs.microsoft.com/learn/modules/control-and-organize-with-azure-resource-manager/2-principles-of-resource-groups?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl

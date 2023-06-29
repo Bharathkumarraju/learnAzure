@@ -1,0 +1,76 @@
+@model IEnumerable<Benday.YamlDemoApp.Api.DomainModels.UserClaim>
+
+@{
+ViewBag.Title = "Index";
+}
+
+    <h2>
+    user claim list
+    </h2>
+
+    <p>
+    @Html.ActionLink("Search", "Search") | @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table table-striped table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>
+                username
+                </th>
+                <th>
+                claim name
+                </th>
+                <th>
+                claim value
+                </th>
+                <th>
+                UserId
+                </th>
+                <th>
+                claim type (normal / date)
+                </th>
+                <th>
+                claim start date
+                </th>
+                <th>
+                claim end date
+                </th>
+            
+                <th>
+                </th>
+            </tr>
+        </thead>
+    
+    @foreach (var item in Model) {
+        <tr class="clickable-tr" onclick="handleRowClick(this)" data-href="@Url.Action("Edit", new { id = item.Id })">
+            <td>
+            @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.ClaimName)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.ClaimValue)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.ClaimLogicType)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+        
+            <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>

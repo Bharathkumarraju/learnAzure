@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-Benday.YamlDemoApp.WebUi-F712B885-5349-4369-94F2-992C7F812F04</UserSecretsId>
+    <StartupObject>Benday.YamlDemoApp.WebUi.Program</StartupObject>
+  </PropertyGroup>
+
+
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.11" />
+  </ItemGroup>
+
+<ItemGroup>
+    <ProjectReference Include="..\Benday.YamlDemoApp.Api\Benday.YamlDemoApp.Api.csproj" />
+    <ProjectReference Include="..\Benday.Common\Benday.Common.csproj" />
+    <ProjectReference Include="..\Benday.EfCore.SqlServer\Benday.EfCore.SqlServer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+</Project>

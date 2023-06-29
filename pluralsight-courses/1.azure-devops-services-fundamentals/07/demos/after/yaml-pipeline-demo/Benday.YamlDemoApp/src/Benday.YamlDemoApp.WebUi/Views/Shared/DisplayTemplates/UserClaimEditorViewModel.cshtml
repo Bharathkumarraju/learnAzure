@@ -1,0 +1,36 @@
+@model Benday.YamlDemoApp.WebUi.Models.UserClaimEditorViewModel
+    <tr id="@Html.Id("row")">
+    @Html.HiddenFor(model => model.IsMarkedForDelete)
+    @Html.HiddenFor(model => model.IsSelected)
+    @Html.HiddenFor(model => model.Id)
+        <td>
+        @Html.DisplayFor(model => model.Username)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.ClaimName)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.ClaimValue)
+        </td>
+    @Html.HiddenFor(model => model.UserId)
+        <td>
+        @Html.DisplayFor(model => model.ClaimLogicType)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.StartDate)
+        </td>
+        <td>
+        @Html.DisplayFor(model => model.EndDate)
+        </td>
+    @Html.HiddenFor(model => model.Status)
+    @Html.HiddenFor(model => model.CreatedBy)
+    @Html.HiddenFor(model => model.CreatedDate)
+    @Html.HiddenFor(model => model.LastModifiedBy)
+    @Html.HiddenFor(model => model.LastModifiedDate)
+    @Html.HiddenFor(model => model.Timestamp)
+        <td>
+        @Html.ActionLink("Edit", "Edit", "UserClaim", new { id=Model.Id }) |
+        @Html.ActionLink("Details", "Details", "UserClaim", new { id=Model.Id }) |
+        @Html.ActionLink("Delete", "Delete", "UserClaim", new { id=Model.Id })
+        </td>
+    </tr>

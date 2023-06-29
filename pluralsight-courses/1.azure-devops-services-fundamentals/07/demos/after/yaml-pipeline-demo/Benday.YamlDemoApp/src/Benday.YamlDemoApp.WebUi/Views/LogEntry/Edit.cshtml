@@ -1,0 +1,87 @@
+@model Benday.YamlDemoApp.WebUi.Models.LogEntryEditorViewModel
+
+@{
+ViewBag.Title = "Edit Log entries";
+}
+
+    <h2>
+    Log entries Editor
+    </h2>
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+
+    <div>
+        <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+    
+        <div class="form-group">
+        @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "control-label" })
+        @Html.DisplayFor(model => model.Id, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.HiddenFor(model => model.Id)
+        </div>
+        <div class="form-group">
+        @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label" })
+            <input asp-for="@Model.Category" class="form-control" />
+            <span asp-validation-for="@Model.Category" class="text-danger">
+            </span>
+        </div>
+    
+        <div class="form-group">
+        @Html.LabelFor(model => model.LogLevel, htmlAttributes: new { @class = "control-label" })
+            <input asp-for="@Model.LogLevel" class="form-control" />
+            <span asp-validation-for="@Model.LogLevel" class="text-danger">
+            </span>
+        </div>
+    
+        <div class="form-group">
+        @Html.LabelFor(model => model.LogText, htmlAttributes: new { @class = "control-label" })
+            <input asp-for="@Model.LogText" class="form-control" />
+            <span asp-validation-for="@Model.LogText" class="text-danger">
+            </span>
+        </div>
+    
+        <div class="form-group">
+        @Html.LabelFor(model => model.ExceptionText, htmlAttributes: new { @class = "control-label" })
+            <input asp-for="@Model.ExceptionText" class="form-control" />
+            <span asp-validation-for="@Model.ExceptionText" class="text-danger">
+            </span>
+        </div>
+    
+        <div class="form-group">
+        @Html.LabelFor(model => model.EventId, htmlAttributes: new { @class = "control-label" })
+            <input asp-for="@Model.EventId" class="form-control" />
+            <span asp-validation-for="@Model.EventId" class="text-danger">
+            </span>
+        </div>
+    
+        <div class="form-group">
+        @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label" })
+            <input asp-for="@Model.State" class="form-control" />
+            <span asp-validation-for="@Model.State" class="text-danger">
+            </span>
+        </div>
+    
+        <div class="form-group">
+        @Html.LabelFor(model => model.LogDate, htmlAttributes: new { @class = "control-label" })
+            <input type="text" asp-for="@Model.LogDate" class="form-control" />
+            <span asp-validation-for="@Model.LogDate" class="text-danger">
+            </span>
+        </div>
+    
+    
+    
+        <div class="form-group">
+            <div class="col-md-offset-2">
+                <input type="submit" value="Save" class="btn btn-default btn-primary mx-2" />
+                <input type="button" class="btn btn-secondary mx-2" value="Cancel" onclick="location.href='@Url.Action("Index")'" />
+            </div>
+        </div>
+    </div>
+}
+
+    <div>
+    @Html.ActionLink("Back to List", "Index")
+    </div>

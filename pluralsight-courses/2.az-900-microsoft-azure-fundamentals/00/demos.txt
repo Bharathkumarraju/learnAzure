@@ -1,0 +1,11 @@
+Section 1, Introduction, Course Introduction, Course Slides PDF, https://acloudguru-content-attachment-production.s3-accelerate.amazonaws.com/1631131778224-Course%20Slides%20-%20Update%20AZ900%20Microsoft%20Azure%20Fundamentals.pdf
+
+Section 1, Introduction, Course Updates, Change Log, https://acloudguru-content-attachment-production.s3-accelerate.amazonaws.com/1666276140518-AZ-900%20-%20S01%20-%20Course%20Updates%20-%20ChangeLogs.pdf
+
+Section 1, Introduction, Azure CLI, Download the latest Azure CLI, https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
+
+Section 1, Introduction, PowerShell, PowerShell, https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-2.8.0&viewFallbackFrom=azps-2.6.0
+
+Section 1, Introduction, ARM Templates, ARM Templates, https://azure.microsoft.com/resources/templates/?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl
+
+Section 1, Introduction, Demo: Creating a Free Azure Account, Create an Azure Account, https://docs.microsoft.com/learn/modules/create-an-azure-account/2-azure-accounts-and-subscriptions?WT.mc_id=ACloudGuru_Learn_multiple-learn-wwl

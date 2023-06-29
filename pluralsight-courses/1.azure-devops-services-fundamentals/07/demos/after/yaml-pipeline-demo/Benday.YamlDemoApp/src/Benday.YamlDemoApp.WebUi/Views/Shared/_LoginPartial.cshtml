@@ -1,0 +1,27 @@
+@using Microsoft.AspNetCore.Identity
+@inject Benday.YamlDemoApp.Api.Security.IUserInformation _UserInformation
+@inject Benday.YamlDemoApp.Api.Security.ISecurityConfiguration _SecurityConfig
+
+    <ul class="navbar-nav">
+    @if (_UserInformation.IsLoggedIn == false)
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" href="@_SecurityConfig.LoginPath">
+            login
+            </a>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" href="@_SecurityConfig.LogoutPath">
+            logout
+            </a>
+        </li>
+        <li class="navbar-text">
+            <i>
+            Hi, @_UserInformation.Username
+            </i>
+        </li>
+    }
+    </ul>
